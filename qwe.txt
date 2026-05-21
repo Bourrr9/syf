@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    background: linear-gradient(145deg, #f0f2f5 0%, #e6e9f0 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 16px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Квадрат-сетка 2x2 --- */
+.square {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* две равные колонки */
+    grid-template-rows: 1fr 1fr;      /* два равных ряда */
+    width: min(700px, 90vw);          /* адаптивный размер, но сохраняет квадратность */
+    height: min(700px, 90vw);
+    max-width: 800px;
+    max-height: 800px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 6px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;                 /* скругление углов обрезает содержимое */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* --- Стили блоков --- */
+.block {
+    position: relative;
+    background: #fff;
+    transition: background 0.2s ease;
+    /* тонкие внутренние линии как на эскизе */
+    border-right: 1px solid #d0d7de;
+    border-bottom: 1px solid #d0d7de;
+}
+
+/* убираем лишние границы по краям сетки */
+.square .block:nth-child(2) {
+    border-right: none;   /* правый верхний блок не имеет правой границы */
+}
+.square .block:nth-child(3) {
+    border-bottom: none;  /* нижний левый блок не имеет нижней границы */
+}
+.square .block:nth-child(4) {
+    border-right: none;
+    border-bottom: none;
+}
+
+/* внутренний отступ и выравнивание */
+.block__inner {
+    padding: 24px 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- Индивидуальная расцветка блоков (лёгкие тона) --- */
+.block--header {
+    background: #f8faff;
+}
+.block--nav {
+    background: #f4f6fb;
+}
+.block--main {
+    background: #ffffff;
+}
+.block--footer {
+    background: #f2f4f8;
+}
+
+/* --- Хедер --- */
+.logo {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.block--header p {
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+/* --- Меню --- */
+.menu__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu__link {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #334155;
+    padding: 6px 12px;
+    border-radius: 40px;
+    transition: all 0.15s;
+    display: inline-block;
+}
+
+.menu__link:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.menu__link.active {
+    background: #1e293b;
+    color: white;
+    padding: 6px 16px;
+}
+
+/* --- Информационная часть --- */
+.block--main h2 {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.block--main p {
+    color: #334155;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.stats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background: #eef2ff;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-weight: 500;
+    color: #1e40af;
+}
+
+/* --- Футер --- */
+.block--footer {
+    text-align: center;
+}
+
+.block--footer p {
+    color: #475569;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+.footer-note {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* --- Адаптация для очень маленьких экранов --- */
+@media (max-width: 480px) {
+    .square {
+        width: 95vw;
+        height: 95vw;
+        border-radius: 20px;
+    }
+    .block__inner {
+        padding: 16px 12px;
+    }
+    .menu__link {
+        font-size: 1rem;
+    }
+}
