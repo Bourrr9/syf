@@ -1,0 +1,58 @@
+
+
+.auth{
+    position: absolute;   
+    top: 410px;
+    left: 900px;
+}
+
+.reg{
+    position: absolute;   
+    top: 450px;
+    left: 900px;
+}   
+
+.profil{
+    position: absolute;   
+    top: 375px;
+    left: 910px;
+}
+
+.exit{
+    position: absolute;   
+    top: 490px;
+    left: 919px;
+}
+.paint{
+    position: absolute;
+    top: 250px;
+    left: 789px;
+    width: 320px;
+    
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  background: url(https://avatars.mds.yandex.net/i?id=fdc49e8504c2089fb80279b3d25a945d_l-4079523-images-thumbs&n=13) center no-repeat;
+  background-size: 100% 100%;
+}
+.prof{
+    position: absolute;
+    top: 430px;
+    left:905px;
+
+}
+.ttt{
+    position: absolute;   
+    top: 390px;
+    left: 860px;
+    width: 200px;
+}
+
+.regg{
+    position: absolute;   
+    top: 450px;
+    left: 870px;
+}   
